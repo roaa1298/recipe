@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+<div class="AddPost">
+    <h1>Add Post</h1>
+    <form action="/" method="post">
+        <label>Write your post: </label><br>
+        <input type="text" name="TextContent">
+        <button type="submit" >Submit</button>
+    </form>
+</div>
+<br><br>
+<h1>Posts</h1>
+<div class="posts">
+    <div class="card" th:each="postElement : ${postsList}">
+        <h3></h3>
+        <h4></h4>
+        <div>
+            <p th:text="${postElement.TextContent}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
