@@ -8,7 +8,6 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    Long userId;
     String TextContent;
 
     @ManyToOne
@@ -17,8 +16,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(String textContent) {
+    public Post(String textContent,RecipeUser recipeUser) {
         this.TextContent = textContent;
+        this.recipeUser=recipeUser;
     }
 
     public Long getId() {

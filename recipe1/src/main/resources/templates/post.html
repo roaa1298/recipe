@@ -5,20 +5,22 @@
     <title>Posts</title>
 </head>
 <body>
+<header><h1 th:text="${userN}"></h1></header>
 <div class="AddPost">
-    <h1>Add Post</h1>
+    <h2>Add Post</h2>
     <form action="/" method="post">
+        <label >UserName: </label>
+        <input type="text" name="username" th:value="${userN}" required readonly/><br>
         <label>Write your post: </label><br>
         <input type="text" name="TextContent">
         <button type="submit" >Submit</button>
     </form>
 </div>
 <br><br>
-<h1>Posts</h1>
+<h2>Posts</h2>
 <div class="posts">
     <div class="card" th:each="postElement : ${postsList}">
-        <h3></h3>
-        <h4></h4>
+        <h3 th:text="${userN}"></h3>
         <div>
             <p th:text="${postElement.TextContent}"></p>
         </div>
